@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Home - Brand</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Actor">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/Bootstrap-DataTables.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="assets/css/Login-Box-En.css">
+    <link rel="stylesheet" href="assets/css/Login-Form-Clean.css">
+    <link rel="stylesheet" href="assets/css/Login-Form-Dark.css">
+    <link rel="stylesheet" href="assets/css/Profile-Card.css">
+    <link rel="stylesheet" href="assets/css/Registration-Form-with-Photo.css">
+</head>
+
+<body id="page-top" onload="index_1onload()">
+    <nav class="navbar navbar-light navbar-expand-md fixed-top" id="mainNav">
+        <div class="container"><a class="navbar-brand js-scroll-trigger" href="#">VWITS-HRMS</a><button data-toggle="collapse" class="navbar-toggler navbar-toggler-right" data-target="#navbarResponsive" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" value="Menu"><i class="fa fa-bars"></i></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive"><a class="d-md-flex justify-content-md-end js-scroll-trigger" href="#download" style="margin: 11px;">Myprofile</a><a class="js-scroll-trigger" href="index.html" style="margin: 11px;" onclick="logOut()">Logout</a>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item nav-link js-scroll-trigger"><a class="nav-link active sr-only js-scroll-trigger" href="#about">Login</a><a class="nav-link js-scroll-trigger" href="#">leaves</a></li>
+                    <li class="nav-item nav-link js-scroll-trigger"><a class="nav-link sr-only js-scroll-trigger" href="#download">Register</a><a class="nav-link js-scroll-trigger" href="#about">Attendance</a><a class="nav-link sr-only js-scroll-trigger" href="#download"></a></li>
+                    <li class="nav-item nav-link js-scroll-trigger"><a class="nav-link sr-only js-scroll-trigger" href="#contact">Myprofile</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header class="masthead" style="background-image:url('assets/img/intro-bg.jpg');">
+        <div class="intro-body">
+            <div class="container" style="margin-top: 120px;">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title" style="color: rgb(0,0,0);">Request Leave</h4><input id="leave_date" type="date" required="">
+                                <div class="dropdown"><button class="btn btn-primary dropdown-toggle" aria-expanded="false" data-toggle="dropdown" id="reason" type="button" style="background: rgb(0,0,0);filter: invert(0%);color: rgb(255,255,255);">Dropdown </button>
+                                    <div class="dropdown-menu"><a class="dropdown-item" href="#">Paid Leaves</a><a class="dropdown-item" href="#">Sick Leaves</a><a class="dropdown-item" href="#">Earned Leaves</a></div>
+                                </div><button class="btn btn-primary" data-bss-hover-animate="pulse" id="leave_request" type="button" style="background: rgb(0,0,0);color: rgb(255,255,255);">Request</button>
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title" style="color: rgb(0,0,0);">approve/rejected</h4>
+                                <div class="table-responsive" id="tbl_ap_rej">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>Column 1</th>
+                                                <th>Column 2</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr data-bss-hover-animate="pulse" style="background: var(--green);">
+                                                <td>1</td>
+                                                <td>14-09-21</td>
+                                            </tr>
+                                            <tr data-bss-hover-animate="pulse" style="background: var(--red);">
+                                                <td>2</td>
+                                                <td>15-09-21</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div><a class="btn btn-link btn-circle" role="button" href="#about"><i class="fa fa-angle-double-down animated"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="text-center content-section" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2>Attendance</h2>
+                    <div class="card">
+                        <div class="card-body"><input id="attendance_date" type="date" style="margin-bottom: 14px;margin-top: 14px;">
+                            <h6 class="text-muted card-subtitle mb-2"></h6><input id="attendance_intime" type="time" style="margin-right: 5px;"><label style="color: rgb(4,0,0);">In-Time</label><input id="attendance_outtime" type="time" style="margin-left: 35px;margin-bottom: 2px;color: rgb(0,0,0);"><label style="color: rgb(4,0,0);margin-left: 6px;">Out-Time</label>
+                            <div class="row">
+                                <div class="col" style="margin-top: 12px;"><button class="btn btn-primary" data-bss-hover-animate="pulse" id="attendance_button" type="button">Submit</button></div>
+                            </div>
+                            <h4 class="card-title" style="color: rgb(0,0,0);margin-top: 24px;">View Attendance</h4>
+                            <div class="table-responsive" id="tbl_attendance">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Date</th>
+                                            <th>REMARK</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="text-center download-section content-section" id="download" style="background-image:url('assets/img/downloads-bg.jpg');">
+        <div class="container">
+            <div class="col-lg-8 mx-auto">
+                <div class="profile-card" style="border-color: var(--black)">
+                    <div class="profile-back" style="background: var(--black)"></div><img class="rounded-circle profile-pic" src="assets/img/star-sky.jpg">
+                    <h3 id="profile_username" style="background: var(--black)" class="profile-name">Hi, <script>document.write(sessionStorage.getItem('user'))</script></h3><label data-bss-hover-animate="pulse">Departmet: RPA PD89</label><label data-bss-hover-animate="pulse" style="margin-left: 44px;">&nbsp;Role: Developer</label><label data-bss-hover-animate="pulse" style="margin-left: 60px;">Team: Kushaq</label>
+                    <div class="progress">
+                        <div class="progress-bar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">50%</div>
+                    </div><label style="color: rgb(255,255,255);">Tasks</label>
+                    <div class="progress">
+                        <div class="progress-bar" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100" style="width: 78%;">78%</div>
+                    </div><label>Courses Completed</label>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="text-center content-section" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2>Contact us</h2>
+                    <p class="text-success"><br>Feel free to reach us out on&nbsp;<span style="text-decoration: underline;">vwits_hrdept@volkswagen.co.in</span><br><br></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="map-clean"></div>
+    <footer>
+        <div class="container text-center">
+            <p>Copyright © VWITS 2021</p>
+        </div>
+    </footer>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="assets/js/Bootstrap-DataTables.js"></script>
+    <script src="assets/js/grayscale.js"></script>
+    <script src="assets/js/authenticate.js"></script>
+</body>
+
+</html>
